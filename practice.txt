@@ -1,0 +1,290 @@
+>>> cmp(1,2)
+-1
+>>> cmp(1,1)
+0
+>>> cmp(2,1)
+1
+>>> int('123')
+123
+>>> int('12.34')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '12.34'
+>>> int(12.34)
+12
+>>> exit()
+
+C:\Users\CW\work>python function.py
+
+C:\Users\CW\work>2
+'2' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+C:\Users\CW\work>python function.py
+  File "function.py", line 1
+    def my_abs(10):
+                ^
+SyntaxError: invalid syntax
+
+C:\Users\CW\work>python
+Python 2.7.2 Stackless 3.1b3 060516 (default, Dec 21 2011, 17:08:51) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> my_abs('A')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'my_abs' is not defined
+>>> def my_abs(x):
+... if x >=0:
+  File "<stdin>", line 2
+    if x >=0:
+     ^
+IndentationError: expected an indented block
+>>> exit()
+
+C:\Users\CW\work>my_abs(10)
+'my_abs' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+C:\Users\CW\work>python function.py
+  File "function.py", line 1
+    def my_abs(10):
+                ^
+SyntaxError: invalid syntax
+
+C:\Users\CW\work>python function.py
+
+C:\Users\CW\work>my_abs(10)
+'my_abs' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+C:\Users\CW\work>python
+Python 2.7.2 Stackless 3.1b3 060516 (default, Dec 21 2011, 17:08:51) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> def my_abs(x):
+...     if x>=0:
+...       return x
+...     else:
+...       return -x
+...
+>>> my_abs(10)
+10
+>>> my_abs(-10）
+  File "<stdin>", line 1
+    my_abs(-10）
+              ^
+SyntaxError: invalid syntax
+>>> my_abs(-10)
+10
+>>> my_abs('A')
+'A'
+>>> abs('A')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: bad operand type for abs(): 'str'
+>>> def my_abs(x):
+...    if not isinstance(x,(int,float)):
+...        raise TypeError('bad operand type')
+...    if x>=0:
+...        return x
+...    else:
+... return -x
+  File "<stdin>", line 7
+    return -x
+    ^
+IndentationError: expected an indented block
+>>> def my_abs(x):
+...     if not isinstance(x,(int,float)):
+...        raise TypeError('bad operand type')
+...     if x>=0:
+...        return x
+...     else:
+...        return -x
+...
+>>> my_abs('A')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in my_abs
+TypeError: bad operand type
+>>> my_abs(-100)
+100
+>>> my_abs(100)
+100
+>>> my_abs(12.34)
+12.34
+>>> import math
+>>>
+>>> def move(x,y,step,angle=0):
+...     nx=x+step*math.cos(angle)
+...     ny=y-step*math.sin(angle)
+...     return nx,ny
+... x,y=move(100,100,60,math.pi/6)
+  File "<stdin>", line 5
+    x,y=move(100,100,60,math.pi/6)
+    ^
+SyntaxError: invalid syntax
+>>> x, y = move(100,100,60,math.pi/6)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'move' is not defined
+>>> import math
+>>>
+>>> def move(x,y,step,angle=0):
+...     nx=x+step*math.cos(angle)
+...     ny=y-step*math.sin(angle)
+...     return nx,ny
+...
+>>> x,y=move(100,100,60,math.pi / 6)
+>>> print(x,y)
+(151.96152422706632, 70.0)
+>>> import math
+>>>
+>>> def move(x,y,step,angle=0):
+...     nx=x+step*math.cos(angle)
+...     ny=y-step*math.sin(angle)
+...     return nx,ny
+...
+>>> x,y=move(100,100,60,math.pi/6)
+>>> print(x,y)
+(151.96152422706632, 70.0)
+>>> x, y = move(100,100,60,math.pi/6)
+>>> print(x,y)
+(151.96152422706632, 70.0)
+>>> x,y=move(100,100,60,math.pi/6)
+>>> print(x,y)
+(151.96152422706632, 70.0)
+>>> r=move(100,100,60,math.pi/6)
+>>> print(r)
+(151.96152422706632, 70.0)
+>>> impart math
+  File "<stdin>", line 1
+    impart math
+              ^
+SyntaxError: invalid syntax
+>>>
+>>> import math
+>>>
+>>> def quadratic(a,b,c):
+...    a*x^2+b*x+c=0
+...    return x
+...
+  File "<stdin>", line 2
+SyntaxError: can't assign to operator
+>>> import math
+>>>
+>>> def quadratic(a,b,c):
+...     if not isinstance(a,(int,float)):
+...        raise TypeError('a is not a number')
+...     if not isinstance(b,(int,float)):
+...        raise TypeError('b is not a number')
+...     if not isinstance(c,(int,float)):
+...        raise TypeError('c is not a number')
+...     p=b*b-4*a*c
+...     if p>=0 and a!=0:
+...        x1=(b+math.sqrt(p))/(2*a)
+...        x2=(-b-math.sqrt(p))/(2*a)
+...        return x1,x2
+...     else:
+...        return('wrong number!')
+...
+>>> print(quadratic(2.3.1))
+  File "<stdin>", line 1
+    print(quadratic(2.3.1))
+                        ^
+SyntaxError: invalid syntax
+>>> r=quadratic(2,3,1)
+>>> print(r)
+(1.0, -1.0)
+>>> import math
+>>> def quadratic(a,b,c):
+...     if not isinstance(a,(int,float)):
+...        raise TypeError('a is not a number')
+...     if not isinstance(b,(int,float)):
+...        raise TypeError('b is not a number')
+...     if not isinstance(c,(int,float)):
+...        raise TypeError('c is not a number')
+...     p=b*b-4*a*c
+...     if p>=0 and a!=0:
+...        x1=(-b+math.sqrt(p))/(2*a)
+...        x1=(-b-math.sqrt(p))/(2*a)
+...     if p>=0 and a!=0:
+...
+  File "<stdin>", line 13
+
+    ^
+IndentationError: expected an indented block
+>>> import math
+>>> def quadratic(a,b,c):
+...     if not isinstance(a,(int,float)):
+...        raise TypeError('a is not a number')
+...     if not isinstance(b,(int,float)):
+...        raise TypeError('b is not a number')
+...     if not isinstance(c,(int,float)):
+...        raise TypeError('c is not a number')
+...     p=b*b-4*a*c
+...     if p>=0 and a!=0:
+...        x1=(-b-math.sqrt(p))/(2*a)
+...        x2=(-b+math.sqrt(p))/(2*a)
+...        return x1,x2
+...     else:
+...        return('wrong number!')
+...
+>>> r=quadratic(2,3,1)
+>>> print(r)
+(-1.0, -0.5)
+>>> import math
+>>>
+>>> def quadratic(a,b,c):
+...     if not isinstance(a,(int,float)):
+...        raise TypeError('a is not a number')
+...     if not isinstance(b,(int,float)):
+...        raise TypeError('b is not a number')
+...     if not isinstance(c,(int,float)):
+...        raise TypeError('c is not a number')
+...     p=b*b-4*a*c
+...     if p>=0 and a!=0:
+...        x1=(-b+math.sqrt(p))/(2*a)
+...        x2=(-b-math.sqrt(p))/(2*a)
+...     else:
+...        return('wrong number!')
+...
+>>> r=quadratic(2,3,1)
+>>> print(r)
+None
+>>> import math
+>>> def quadratic(a,b,c):
+...     if not isinstance(a,(int,float)):
+...        raise TypeError('a is not a number')
+...     if not isinstance(b,(int,float)):
+...        raise TypeError('b is not a number')
+...     if not isinstance(c,(int,float)):
+...        raise TypeError('c is not a number')
+...     p=b*b-4*a*c
+...     if p>=0 and a!=0:
+...        x1=(-b+math.sqrt(p))/(2*a)
+...        x2=(-b-math.sqrt(p))/(2*a)
+...        return x1,x2
+...     else:
+...        return('wrong number!')
+...
+>>> r=quadratic(2,3,1)
+>>> print(r)
+(-0.5, -1.0)
+>>> import math
+>>> def quadratic(a,b,c):
+...     if not isinstance(a,(int,float)):
+...        raise TypeError('a is not a number')
+...     if not isinstance(b,(int,float)):
+...        raise TypeError('b is not a number')
+...     if not isinstance(c,(int,float)):
+...        raise TypeError('c is not a number')
+...     p=b^2-4*a*c
+...     if p>=0 and a!=0:
+...        x1=(-b+math.sqrt(q))/(2*a)
+...        x2=(-b-math.sqrt(q))/(2*a)
+...        return x1,x2
+...     else:
+...        return('wrong number!')
+...
+>>> r=quadratic(2,3,1)
+>>> print(r)
+wrong number!
