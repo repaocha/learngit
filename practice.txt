@@ -288,3 +288,300 @@ None
 >>> r=quadratic(2,3,1)
 >>> print(r)
 wrong number!
+>>> def fact(n):
+...     return fact_iter(n,1)
+... def fact_iter(num,product):
+  File "<stdin>", line 3
+    def fact_iter(num,product):
+      ^
+SyntaxError: invalid syntax
+>>> def move(n,a,b,c):
+...     if n==1:
+...        print(a,'-->',c)
+...     else:
+...        move(n-1,a,c,b)
+...        move(1,a,b,c)
+...        move(n-1,b,a,c)
+... n=input('enter the number:')
+  File "<stdin>", line 8
+    n=input('enter the number:')
+    ^
+SyntaxError: invalid syntax
+>>> def move(n,a,b,c):
+...     if n==1:
+...        print(a,'-->',c)
+...     else:
+...        move(n-1,a,c,b)
+...        move(1,a,b,c)
+...        move(n-1,b,a,c)
+...        n=input('enter the number:')
+...        move(int(n),'A','B','C'A)
+  File "<stdin>", line 9
+    move(int(n),'A','B','C'A)
+                           ^
+SyntaxError: invalid syntax
+>>> def move(n,a,b,c):
+...     if n==1:
+...        print(a,'-->',c)
+...     else:
+...        move(n-1,a,c,b)
+...        move(1,a,b,c)
+...        move(n-1,b,a,c)
+...        n=input('enter the number:')
+...        move(int(n),'A','B','C')
+...
+>>> move(3,'A','B','C')
+('A', '-->', 'C')
+('A', '-->', 'B')
+('C', '-->', 'B')
+enter the number:3
+('A', '-->', 'C')
+('A', '-->', 'B')
+('C', '-->', 'B')
+enter the number:6
+('A', '-->', 'B')
+('A', '-->', 'C')
+('B', '-->', 'C')
+enter the number:SER
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 5, in move
+  File "<stdin>", line 9, in move
+  File "<stdin>", line 5, in move
+  File "<stdin>", line 9, in move
+  File "<stdin>", line 5, in move
+  File "<stdin>", line 5, in move
+  File "<stdin>", line 5, in move
+  File "<stdin>", line 5, in move
+  File "<stdin>", line 8, in move
+  File "<string>", line 1, in <module>
+NameError: name 'SER' is not defined
+>>> def move(n,a,b,c):
+...     if n==1:
+...        print(a,'-->',c)
+...     else:
+...        move(n-1,a,c,b)
+...        print(a,'-->',c)
+...        move(n-1,b,a,c)
+...
+>>> move(3,a,b,c)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a' is not defined
+>>> move(3,'A','B','C')
+('A', '-->', 'C')
+('A', '-->', 'B')
+('C', '-->', 'B')
+('A', '-->', 'C')
+('B', '-->', 'A')
+('B', '-->', 'C')
+('A', '-->', 'C')
+>>> move(3,A,B,C)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'A' is not defined
+>>> def move(n,a,b,c):
+...     if n==1:
+...        print('%s --> %s' %(a,c))
+...     else:
+...        move(n-1,a,c,b)
+...        print('%s --> %s' %(a,c))
+...        move(n-1,b,a,c)
+...
+>>> move(3,'A','B','C')
+A --> C
+A --> B
+C --> B
+A --> C
+B --> A
+B --> C
+A --> C
+>>> def move(n,a,b,c):
+...     if n==1:
+...        print('%s --> %s' %(a,c))
+...     else:
+...        move(n-1,a,c,b)
+...        print('%s --> %s' %(a,c))
+...        move(n-1,b,a,c)
+...
+>>> move(3,'a','b','c')
+a --> c
+a --> b
+c --> b
+a --> c
+b --> a
+b --> c
+a --> c
+>>> L=['yang','chen','yangchen','yangyang','yangyangya
+ng']
+>>> r=[]
+>>> n=3
+>>> for i in range(n):
+...     r.append(L[i])
+...
+>>> r
+['yang', 'chen', 'yangchen']
+>>> r=()
+>>> n=3
+>>> for i in range(n):
+...     r.append(L[i])
+...
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+AttributeError: 'tuple' object has no attribute 'appen
+d'
+>>> L[0:3]
+['yang', 'chen', 'yangchen']
+>>> L[:3]
+['yang', 'chen', 'yangchen']
+>>> L[1:3]
+['chen', 'yangchen']
+>>> L[-2:]
+['yangyang', 'yangyangyang']
+>>> L=range(100)
+>>> l
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'l' is not defined
+>>> L
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+ 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 2
+9, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,
+ 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 5
+6, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69,
+ 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 8
+3, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96,
+ 97, 98, 99]
+>>> L[1:19]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+, 17, 18]
+>>> L[-10:]
+[90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+>>> L[:10:2]
+[0, 2, 4, 6, 8]
+>>> L[::10]
+[0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+>>> L[:]
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+ 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 2
+9, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,
+ 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 5
+6, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69,
+ 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 8
+3, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96,
+ 97, 98, 99]
+>>> L=['ABCDEFGHIJK']
+>>> L
+['ABCDEFGHIJK']
+>>> L[:5]
+['ABCDEFGHIJK']
+>>> L[::2]
+['ABCDEFGHIJK']
+>>> 'ABCDEFGHIJK'[:2]
+'AB'
+>>> L='ABCDEFGHIJK'
+>>> L[:2]
+'AB'
+>>> d={'a':1,'b':2,'c':3}
+>>> for key in d:
+...     print key
+...
+a
+c
+b
+>>> for ch in 'ABC':
+...     print ch
+...
+A
+B
+C
+>>> from collections import Iterable
+>>> isintance('abc',Iterable)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'isintance' is not defined
+>>> from collections import Iterable
+>>> isinstance('abc',Iterable)
+True
+>>> isinstance([1,2,3],Iterable)
+True
+>>> isinstance(123,Iterable)
+False
+>>> for i, value in enumerate(['A','B','C']):
+...     print i,value
+...
+0 A
+1 B
+2 C
+>>> for i in('A','B','C'):
+...
+  File "<stdin>", line 2
+
+    ^
+IndentationError: expected an indented block
+>>> for i in('A','B','C')
+  File "<stdin>", line 1
+    for i in('A','B','C')
+                        ^
+SyntaxError: invalid syntax
+>>> for i in('A','B','C'):
+...     print i
+...
+A
+B
+C
+>>> for yang in('abcdefghijklmn):
+  File "<stdin>", line 1
+    for yang in('abcdefghijklmn):
+                                ^
+SyntaxError: EOL while scanning string literal
+>>> for yang in('abcdefghijk'):
+...    print yang
+...
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+>>> for yangchen in('[1,2,3,4,5,6,7,8,9,0]'):
+...     print yangchen
+...
+[
+1
+,
+2
+,
+3
+,
+4
+,
+5
+,
+6
+,
+7
+,
+8
+,
+9
+,
+0
+]
+>>> for x,y in[(1,1),(2,2),(3,3)]:
+...       print x,y
+...
+1 1
+2 2
+3 3
+>>> for x,y in([1,1],[2,2],[3,3]):
+...     print x,y
+...
+1 1
+2 2
+3 3
