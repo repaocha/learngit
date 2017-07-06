@@ -89,3 +89,31 @@ L=[('Bob,75'),('Adam',92),('Bart',66),('Lisa',88)]
 
 >>>L2=sorted(L,key=by_scort,reverse=True)
 [('Adam', 92), ('Lisa', 88), ('Bob', 75), ('Bart', 66)]
+
+请利用@property给一个Screen对象加上width和height属性，以及一个只读属性resolution
+# -*- coding: utf-8 -*-
+class Screen(object):
+    @property
+    def width(self):
+         return self._width
+    
+    @width setter
+    def width(self,width):
+         self._width=width
+
+    @property
+    def height(self):
+         return self._height
+
+    @height setter
+    def height(self,height):
+         self._height=height
+
+    @property
+    def resolution(self):
+         return (self._width)*(self._height)
+>>> s=Screen()
+>>> s.width=1024
+>>> s.height=768
+>>> print(s.resolution)
+786432
