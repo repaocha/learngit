@@ -815,3 +815,296 @@ IndentationError: unexpected indent
 'Bart Simpson'
 >>> bart.score
 59
+
+>>> class Student(object):
+...    def __init__(self,name,score):
+...        self.name=name
+...        self.score=score
+...    def print_score(self):
+...        print('%s:%s' % (self.name,self.score))
+...    def get_grade(self):
+...        if self.score>=90:
+...           return 'A'
+...        elif self.score>=60
+  File "<stdin>", line 10
+    elif self.score>=60
+                      ^
+SyntaxError: invalid syntax
+>>> class Student(object):
+...    def __init__(self,name,score):
+...        self.name=name
+...        self.score=score
+...    def print_score(self):
+...        print('%s:%s' % (self.name,self.score))
+...    def get_grade(self):
+...        if self.score>=90:
+...           return 'A'
+...        elif self.score>=60:
+...           return 'B'
+...        else:
+...           return 'C'
+...
+>>> bart.get_grade()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'g
+et_grade'
+>>> class Student(object):
+...    def __init__(self,name,score):
+...        self.name=name
+...        self.score=score
+...
+>>> bart=Student('yangchen',99)
+>>> bart.name
+'yangchen'
+>>> bart.score
+99
+>>> def print_score(std):
+...     print '%s:%s' % (self.name,self.score)
+...
+>>> print_score(bart)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in print_score
+NameError: global name 'self' is not defined
+>>> def print_score(std):
+...     print '%s:%s' % (std.name,std.score)
+...
+>>> print print_score(bart)
+yangchen:99
+None
+>>> print_score(bart)
+yangchen:99
+>>> print(print_score(bart))
+yangchen:99
+None
+>>> def get_grade(self):
+...     if self.score>=90:
+...        return 'A'
+...     elif aelf.score>=60:
+...        return 'B'
+...     else:
+...        return 'C'
+...
+>>> bart.get_grade()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'Student' object has no attribute 'g
+et_grade'
+>>> class Student(object):
+...     def get_grade(self):
+...        if self.score>=90:
+...           return 'A'
+...        elif aelf.score>=60:
+...           return 'B'
+...        else:
+...           return 'C'
+...
+>>> bart,get_grade()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: get_grade() takes exactly 1 argument (0 g
+iven)
+>>> calss Animal(object):
+  File "<stdin>", line 1
+    calss Animal(object):
+               ^
+SyntaxError: invalid syntax
+>>> class Animal(object):
+...     def run(self):
+...       print('Animal is running.')
+...
+>>> animal=Animal()
+>>> animal.run()
+Animal is running.
+>>> class Dog(self):
+...     def run(self):
+...     print ('Animal is running.')
+  File "<stdin>", line 3
+    print ('Animal is running.')
+        ^
+IndentationError: expected an indented block
+>>> class Dog(Animal):
+...    pass
+...
+>>> class Cat(Animal):
+...    pass
+...
+>>> dog=Dog()
+>>> dog.run()
+Animal is running.
+>>> cat=Cat()
+>>> cat.run()
+Animal is running.
+>>> class Dog(Animal):
+...   pass
+... class Cat(Animal):
+  File "<stdin>", line 3
+    class Cat(Animal):
+        ^
+SyntaxError: invalid syntax
+>>>  class Dog(Animal):
+  File "<stdin>", line 1
+    class Dog(Animal):
+    ^
+IndentationError: unexpected indent
+>>>  class Dog(Animal):
+  File "<stdin>", line 1
+    class Dog(Animal):
+    ^
+IndentationError: unexpected indent
+>>> class Animal(self):
+...    def run():
+...
+  File "<stdin>", line 3
+
+    ^
+IndentationError: expected an indented block
+>>> class Animal(object):
+...    def run(self):
+...      print('Animal is running.')
+...
+>>> class Dog(Animal):
+...    def run(self):
+...      print('Dog is running.')
+...
+>>> class Cat(Animal):
+...        pass
+...
+>>> dog=Dog()
+>>> dog.run()
+Dog is running.
+>>> cat=Cat()
+>>> cat.run()
+Animal is running.
+>>> def run_twice():
+...   animal.run()
+...   animal.run()
+...
+>>> def run_twice(animal):
+...   animal.run()
+...   animal.run()
+...
+>>> run.twice(Animal())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'run' is not defined
+>>> class Animal(object):
+...    def run(self):
+...      print('animal is running.')
+...
+>>> class Dog(Animal):
+...    def run(self):
+...       print('dog is running.')
+...
+>>> class Cat(Animal):
+...    def run(self):
+...       print('cat is running.')
+...
+>>> def run_twice(Animal()):
+  File "<stdin>", line 1
+    def run_twice(Animal()):
+                        ^
+SyntaxError: invalid syntax
+>>> def run_twice(animal()):
+  File "<stdin>", line 1
+    def run_twice(animal()):
+                        ^
+SyntaxError: invalid syntax
+>>> def run_twice(animal):
+...     animal.run()
+...     animal.run()
+...
+>>> run_twice(Animal())
+animal is running.
+animal is running.
+>>> def run_twice(Animal):
+...     Animal.run()
+...     Animal.run()
+...
+>>> run_twice(Animal())
+animal is running.
+animal is running.
+>>> run_twice(Dog())
+dog is running.
+dog is running.
+>>> run_twice(DOG())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'DOG' is not defined
+>>> run_twice(Dog())
+dog is running.
+dog is running.
+>>> run_twice(Cat())
+cat is running.
+cat is running.
+>>> class Tortoise(Animal):
+...    def run(self):
+...       print('Tortoise is running.')
+...
+>>> run_twice(Tortoise())
+Tortoise is running.
+Tortoise is running.
+>>> type(abs)
+<type 'builtin_function_or_method'>
+>>> type(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a' is not defined
+>>> import types
+>>> def fn():
+...    pass
+...  type(fn)
+  File "<stdin>", line 3
+    type(fn)
+           ^
+IndentationError: unindent does not match any outer
+indentation level
+>>> type(fn)=types.FuncetionType
+  File "<stdin>", line 1
+SyntaxError: can't assign to function call
+>>> type(fn)=types.FunctionType
+  File "<stdin>", line 1
+SyntaxError: can't assign to function call
+>>> import types
+>>> def fn():
+...   pass
+...
+>>> type(fn)=types.FunctionType
+  File "<stdin>", line 1
+SyntaxError: can't assign to function call
+>>> ^X
+
+C:\Users\CW>
+
+C:\Users\CW>python
+Python 2.7.2 Stackless 3.1b3 060516 (default, Dec 21
+ 2011, 17:08:51) [MSC v.1500 32 bit (Intel)] on win3
+2
+Type "help", "copyright", "credits" or "license" for
+ more information.
+>>> import types
+>>> def fn():
+...    pass
+...
+...
+>>> type(fn)=types.FunctionType
+  File "<stdin>", line 1
+SyntaxError: can't assign to function call
+>>> import types
+>>> type('abc')==types.Stringtype
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'module' object has no attribute 'St
+ringtype'
+>>> type('abc')==types.StringType
+True
+>>> type(123)==types.IntType
+True
+>>> type(123)==types.intType
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'module' object has no attribute 'in
+tType'
+>>> type(123)==types.IntType
+True
