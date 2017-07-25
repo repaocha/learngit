@@ -36,6 +36,6 @@ If you wish to set tracking information for this branch you can do so with:
 然后按照提示输入git branch --set-upstream-to=origin/master master与master分支关联，
 完成后再执行 git pull 和 git push.
 
+参考链接：http://www.jianshu.com/p/eaaba8dc3ab3
 
-链接：http://www.jianshu.com/p/eaaba8dc3ab3
 
