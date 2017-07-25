@@ -1108,3 +1108,264 @@ AttributeError: 'module' object has no attribute 'in
 tType'
 >>> type(123)==types.IntType
 True
+
+CW@H-PC MINGW64 ~
+$ cd e:/learngit
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ cat redme.txt
+cat: redme.txt: No such file or directory
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+Creating a new branch is quick.
+CW@H-PC MINGW64 /e/learngit (master)
+$ git checkout -b dev
+M       readme.txt
+Switched to a new branch 'dev'
+
+CW@H-PC MINGW64 /e/learngit (dev)
+$ git branch
+* dev
+  master
+
+CW@H-PC MINGW64 /e/learngit (dev)
+$ git add readme.txt
+
+CW@H-PC MINGW64 /e/learngit (dev)
+$ git commit -m"branch test"
+[dev 03c1132] branch test
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+CW@H-PC MINGW64 /e/learngit (dev)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git merge dev
+Updating 313b5c2..03c1132
+Fast-forward
+ readme.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git branch -d dev
+Deleted branch dev (was 03c1132).
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git branch
+* master
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git checkout -b feature1
+Switched to a new branch 'feature1'
+
+CW@H-PC MINGW64 /e/learngit (feature1)
+$ git add readme.txt
+
+CW@H-PC MINGW64 /e/learngit (feature1)
+$ git commit -m"AND simple"
+[feature1 630168f] AND simple
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+CW@H-PC MINGW64 /e/learngit (feature1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git add readme.txt
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git commit -m"& simple"
+[master bb58a31] & simple
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git merge feature1
+Auto-merging readme.txt
+CONFLICT (content): Merge conflict in readme.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+CW@H-PC MINGW64 /e/learngit (master|MERGING)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+CW@H-PC MINGW64 /e/learngit (master|MERGING)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+Creating a new branch is quick.
+Creating a new branch is quick.
+<<<<<<< HEAD
+Creating a new branch is quick &simple.
+=======
+Creating a new branch is quick AND simple.
+>>>>>>> feature1
+
+CW@H-PC MINGW64 /e/learngit (master|MERGING)
+$ git add readme.txt
+
+CW@H-PC MINGW64 /e/learngit (master|MERGING)
+$ git commit -m"conflict fixed"
+[master fd3d3ff] conflict fixed
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git log --graph --pretty=oneline --abbrev-commit
+*   fd3d3ff conflict fixed
+|\
+| * 630168f AND simple
+* | bb58a31 & simple
+|/
+* 03c1132 branch test
+* 313b5c2 remove test.txt
+* 1c81325 add test.txt
+* d881232 git tracks changes of file
+* 4473f3d git tracks changes”
+* 04d3ba3 understand how stage works
+* 0355955 append GPL
+* a42e8eb add distributed
+* 98d27e9 wrote a readme file
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git branch -d feature1
+Deleted branch feature1 (was 630168f).
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git checkout -b dev
+Switched to a new branch 'dev'
+
+CW@H-PC MINGW64 /e/learngit (dev)
+$ git add readme.txt
+
+CW@H-PC MINGW64 /e/learngit (dev)
+$ git commit -m"add merge"
+[dev fbda8c9] add merge
+ 1 file changed, 7 deletions(-)
+
+CW@H-PC MINGW64 /e/learngit (dev)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git merge --no-ff -m "merge with no-ff" dev
+Merge made by the 'recursive' strategy.
+ readme.txt | 7 -------
+ 1 file changed, 7 deletions(-)
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git log --graph --pretty=oneline --abbrev-commit
+*   62c088c merge with no-ff
+|\
+| * fbda8c9 add merge
+|/
+*   fd3d3ff conflict fixed
+|\
+| * 630168f AND simple
+* | bb58a31 & simple
+|/
+* 03c1132 branch test
+* 313b5c2 remove test.txt
+* 1c81325 add test.txt
+* d881232 git tracks changes of file
+* 4473f3d git tracks changes”
+* 04d3ba3 understand how stage works
+* 0355955 append GPL
+* a42e8eb add distributed
+* 98d27e9 wrote a readme file
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git remote
+origin
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git remote -v
+origin  git@github.com:repaocha/learngit.git (fetch)
+origin  git@github.com:repaocha/learngit.git (push)
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git push origin master
+Counting objects: 16, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (16/16), 1.49 KiB | 0 bytes/s, done.
+Total 16 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), done.
+To git@github.com:repaocha/learngit.git
+   313b5c2..62c088c  master -> master
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git push origin dev
+Total 0 (delta 0), reused 0 (delta 0)
+To git@github.com:repaocha/learngit.git
+ * [new branch]      dev -> dev
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git branch
+  dev
+* master
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git tag v1.0
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git tag
+v1.0
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git log --pretty=oneline --abbrev-commit
+62c088c merge with no-ff
+fbda8c9 add merge
+fd3d3ff conflict fixed
+bb58a31 & simple
+630168f AND simple
+03c1132 branch test
+313b5c2 remove test.txt
+1c81325 add test.txt
+d881232 git tracks changes of file
+4473f3d git tracks changes”
+04d3ba3 understand how stage works
+0355955 append GPL
+a42e8eb add distributed
+98d27e9 wrote a readme file
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git tag v0.9 1c81325
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git tag
+v0.9
+v1.0
+
+CW@H-PC MINGW64 /e/learngit (master)
+$ git show v0.9
+commit 1c8132591ec8669a798722195c58b007f0ba7d9d
+Author: hanjiuzhou <jiuzhou.han@itnihao.com>
+Date:   Mon Jul 3 14:03:51 2017 +0800
+
+    add test.txt
+
+diff --git a/test.txt b/test.txt
+new file mode 100644
+index 0000000..e69de29
