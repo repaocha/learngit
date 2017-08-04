@@ -1,0 +1,52 @@
+﻿# 新项目
+
+git clone 项目地址
+git add .  #注：别忘记后面的 .，把路径文件夹下面的文件都添加进来
+git commit  -m  "提交信息"  #注：“提交信息”里面换成你需要，如“first commit”
+git push -u origin master   #把本地仓库push到github上面
+
+# 修改已存在项目
+git rm 文件    # 删除
+git add 文件名 # 若修改的文件多，那就直接 git add .
+git commit  -m  "delete"
+git push origin master #若 push 不成功，则先 pull,再 push
+
+# git 命令
+
+git init  #当前文件夹下创建一个.git文件夹.
+git status  #查询repo的状态
+git clean -df  #从工作目录中移除没有track的文件
+
+git add <file> # 将指定文件提交到本地暂存区
+git add . # 将所有修改过的工作文件提交暂存区
+
+git rm <file> # 从版本库中删除文件
+git rm <file> --cached # 从版本库中删除文件，但不删除文件
+
+git reset <file> # 从暂存区恢复到工作文件
+git reset --hard # 放弃上次提交后的所有本次修改
+
+git diff --cached # 比较暂存区和版本库差异
+
+git log <file> # 查看该文件每次提交记录
+git log -p <file> # 查看每次详细修改内容的diff
+git log -p -2 # 查看最近两次详细修改内容的diff
+git log --stat #查看提交统计信息
+
+分支管理
+git br -r # 查看远程分支
+git br <new_branch> # 创建新的分支
+git br -v # 查看各个分支最后提交信息
+
+暂存管理
+git stash # 暂存
+git stash list # 列所有stash
+git stash apply # 恢复暂存的内容
+git stash drop # 删除暂存区
+
+git pull #抓取远程仓库所有分支更新并合并到本地
+git fetch origin # 抓取远程仓库更新
+
+git push  # push所有分支
+git push origin master # 将本地主分支推到远程主分支
+git push -u origin master # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)
