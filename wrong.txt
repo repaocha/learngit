@@ -74,7 +74,3 @@ If you wish to set tracking information for this branch you can do so with:
 完成后再执行 git pull 和 git push.
 
 参考链接：http://www.jianshu.com/p/eaaba8dc3ab3
-
-aaaaaaaa
-
-
