@@ -1,3 +1,40 @@
+﻿建立github仓库的基本步骤：
+1.建立项目,进入项目文件夹
+初始化ssh key
+
+2.初始化用户名,邮箱
+$ Git config --global user.name "defnngj"//给自己起个用户名
+$ git config --global user.email "defnngj@gmail.com"//填写自己的邮箱
+
+3.git init
+
+4.git add .
+
+5.git commit -m "message for this commit"
+
+6.touch README.md
+
+7.git add README.md
+
+8.git status
+
+9.去github网站建立一个repo 如"yangchen.git"
+
+10.git remote add origin git@github.com:repaocha/yangchen.git
+如果遇到了fatal: remote origin already exists.输入:
+git remote rm origin
+
+11.git push -u origin master
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 119.15 KiB | 0 bytes/s, done.
+Total 8 (delta 0), reused 0 (delta 0)
+To github.com:repaocha/procedure.git
+   bf19a5e..cd034c1  master -> master
+Branch master set up to track remote branch master from origin.
+
+
 Host key verification failed.
 fatal: Could not read from remote repository.
 
@@ -37,5 +74,7 @@ If you wish to set tracking information for this branch you can do so with:
 完成后再执行 git pull 和 git push.
 
 参考链接：http://www.jianshu.com/p/eaaba8dc3ab3
+
+aaaaaaaa
 
 
