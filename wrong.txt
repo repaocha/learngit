@@ -74,3 +74,11 @@ If you wish to set tracking information for this branch you can do so with:
 完成后再执行 git pull 和 git push.
 
 参考链接：http://www.jianshu.com/p/eaaba8dc3ab3
+
+SSH生成id_rsa, id_rsa.pub后，连接服务器却报：
+Agent admitted failure to sign using the key
+错误。
+解决方法：
+在当前用户下执行命令：
+ssh-add
+即可解决。
